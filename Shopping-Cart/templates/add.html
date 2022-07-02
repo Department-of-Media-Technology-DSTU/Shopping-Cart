@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<h2>Добавление позиций</h2>
+<form action="/addItem" method="POST" enctype="multipart/form-data">
+	Название: <input type="text" name="name"><br>
+	Цена: <input type="text" name="price"><br>
+	Описание: <textarea name="description" rows=3 cols="40"></textarea><br>
+	Картинка: <input type="file" name="image"><br>
+	Цена: <input type="text" name="stock"><br>
+	Категории: <select name="category">
+		{% for row in categories %}
+			<option value="{{row[0]}}">{{row[1]}}</option>
+		{% endfor %}
+	</select><br>
+	<input type="submit">
+</form>
+</body>
+</html>
+
